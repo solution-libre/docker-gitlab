@@ -5,8 +5,9 @@
 1. [Description](#module-description)
 2. [Setup](#setup)
 3. [Usage](#usage)
-4. [Development](#development)
-5. [Contributors](#contributors)
+4. [Reference](#reference)
+5. [Development](#development)
+6. [Contributors](#contributors)
 
 ## Description
 
@@ -28,6 +29,14 @@ Change the hostname value in `.env`.
 cd /opt/gitlab
 docker-compose up -d
 ```
+
+## Reference
+
+### Environment variables
+
+#### `GITLAB_HOSTNAME`
+
+The GitLab hostname. Default value: 'my.domain.tld'
 
 ## Development
 
