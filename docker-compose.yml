@@ -29,6 +29,7 @@ services:
     restart: always
     volumes:
       - ./docker-volume/runner/config:/etc/gitlab-runner
+      - /var/run/docker.sock:/var/run/docker.sock
 
 networks:
   web:
