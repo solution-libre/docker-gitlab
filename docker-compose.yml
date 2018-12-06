@@ -15,13 +15,20 @@ services:
       traefik.frontend.rule: "Host:${GITLAB_HOSTNAME}"
       traefik.port: '80'
     networks:
+      - default
       - web
     ports:
       - '22:22'
     volumes:
-      - './config:/etc/gitlab'
-      - './logs:/var/log/gitlab'
-      - './data:/var/opt/gitlab'
+      - ./docker-volume/web/config:/etc/gitlab
+      - ./docker-volume/web/logs:/var/log/gitlab
+      - ./docker-volume/web/data:/var/opt/gitlab
+
+  runner:
+    image: 'gitlab/gitlab-runner:latest'
+    restart: always
+    volumes:
+      - ./docker-volume/runner/config:/etc/gitlab-runner
 
 networks:
   web:
