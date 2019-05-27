@@ -21,7 +21,7 @@ git clone https://github.com/solution-libre/docker-gitlab.git gitlab
 cd gitlab
 ```
 
-Change the hostname value in `.env`.
+Declare environment variables or copy the `.env.dist` to `.env` and adjust its values.
 
 ## Usage
 
@@ -37,6 +37,10 @@ docker-compose up -d
 #### `GITLAB_HOSTNAME`
 
 The GitLab hostname. Default value: 'my.domain.tld'
+
+#### `GITLAB_SSH_PORT`
+
+The GitLab SSH port for git. Default value: '22'
 
 ## Development
 

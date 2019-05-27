@@ -18,19 +18,25 @@ services:
       - default
       - web
     ports:
-      - '22:22'
+      - ${GITLAB_SSH_PORT}:22
     volumes:
-      - ./docker-volume/web/config:/etc/gitlab
-      - ./docker-volume/web/logs:/var/log/gitlab
-      - ./docker-volume/web/data:/var/opt/gitlab
+      - web_config:/etc/gitlab
+      - web_logs:/var/log/gitlab
+      - web_data:/var/opt/gitlab
 
   runner:
     image: 'gitlab/gitlab-runner:latest'
     restart: always
     volumes:
-      - ./docker-volume/runner/config:/etc/gitlab-runner
+      - runner_config:/etc/gitlab-runner
       - /var/run/docker.sock:/var/run/docker.sock
 
 networks:
   web:
     external: true
+
+volumes:
+  runner_config:
+  web_config:
+  web_data:
+  web_logs:
