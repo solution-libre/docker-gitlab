@@ -46,9 +46,8 @@ The GitLab SSH port for git. Default value: '22'
 
 [Solution Libre](https://www.solution-libre.fr)'s repositories are open projects, and community contributions are essential for keeping them great.
 
-
 [Fork this repo on GitHub](https://github.com/solution-libre/docker-gitlab/fork)
 
 ## Contributors
 
-The list of contributors can be found at: https://github.com/solution-libre/docker-gitlab/graphs/contributors
+The list of contributors can be found at: <https://github.com/solution-libre/docker-gitlab/graphs/contributors>
