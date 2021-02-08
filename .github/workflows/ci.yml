@@ -15,8 +15,11 @@ jobs:
         run: docker-compose --env-file .env.dist config -q
   check-readme-syntax:
     runs-on: ubuntu-latest
+    container: 
+      image: ruby
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
-    - name: Lint Markdown
-      uses: actionshub/markdownlint@1.2.0
+      - uses: actions/checkout@v2
+      - name: Install Markdown lint tool
+        run: gem install mdl
+      - name: Check README syntax
+        run: mdl README.md
