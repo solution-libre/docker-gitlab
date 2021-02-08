@@ -2,7 +2,7 @@
 
 #### Table of Contents
 
-1. [Description](#module-description)
+1. [Description](#description)
 2. [Setup](#setup)
 3. [Usage](#usage)
 4. [Reference](#reference)
@@ -11,7 +11,7 @@
 
 ## Description
 
-Docker-compose setup for starting GitLab with [Træfik](https://traefik.io/).
+[Docker Compose](https://docs.docker.com/compose/) setup for starting [GitLab](https://gitlab.com/) with [Træfik](https://traefik.io/).
 
 ## Setup
 
