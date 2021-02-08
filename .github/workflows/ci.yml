@@ -16,10 +16,10 @@ jobs:
   check-readme-syntax:
     runs-on: ubuntu-latest
     container: 
-      image: markdownlint/markdownlint
+      image: ruby
     steps:
-      - name: Change directory
-        run: cd /tmp
       - uses: actions/checkout@v2
+      - name: Install Markdown lint tool
+        run: gem install mdl
       - name: Check README syntax
         run: mdl README.md
