@@ -15,11 +15,8 @@ jobs:
         run: docker-compose --env-file .env.dist config -q
   check-readme-syntax:
     runs-on: ubuntu-latest
-    container: 
-      image: markdownlint/markdownlint
     steps:
-      - name: Change directory
-        run: cd /tmp
-      - uses: actions/checkout@v2
-      - name: Check README syntax
-        run: mdl README.md
+    - name: Checkout repository
+      uses: actions/checkout@v2
+    - name: Lint Markdown
+      uses: actionshub/markdownlint@1.2.0
