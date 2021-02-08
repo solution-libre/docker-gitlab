@@ -18,6 +18,8 @@ jobs:
     container: 
       image: markdownlint/markdownlint
     steps:
+      - name: Change directory
+        run: cd /tmp
       - uses: actions/checkout@v2
       - name: Check README syntax
         run: mdl README.md
