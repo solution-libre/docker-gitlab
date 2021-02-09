@@ -11,12 +11,17 @@ services:
         nginx['listen_port'] = '80'
         nginx['listen_https'] = false
         gitlab_rails['gitlab_shell_ssh_port'] = ${GITLAB_SSH_PORT}
+    # Traefik labels are suggested as an example for people using Traefik,
+    # remove them if you are using another reverse proxy.
     labels:
       traefik.backend: 'gitlab'
       traefik.enable: 'true'
       traefik.docker.network: 'web'
       traefik.frontend.rule: "Host:${GITLAB_HOSTNAME}"
       traefik.port: '80'
+    # If you don't want to use a reverse proxy (not suitable for production!)
+    # ports:
+    #  - "80:80"
     networks:
       - default
       - web
