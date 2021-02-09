@@ -1,9 +1,9 @@
-version: "3.3"
+version: '3.3'
 
 services:
   web:
     image: 'gitlab/gitlab-ce:latest'
-    restart: always
+    restart: unless-stopped
     hostname: ${GITLAB_HOSTNAME}
     environment:
       GITLAB_OMNIBUS_CONFIG: |
@@ -34,7 +34,7 @@ services:
 
   runner:
     image: 'gitlab/gitlab-runner:latest'
-    restart: always
+    restart: unless-stopped
     volumes:
       - runner_config:/etc/gitlab-runner
       - /var/run/docker.sock:/var/run/docker.sock
