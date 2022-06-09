@@ -1,5 +1,6 @@
 # GitLab with Docker Compose
 
+<!-- markdownlint-disable-next-line MD001 -->
 #### Table of Contents
 
 1. [Description](#description)
@@ -11,7 +12,8 @@
 
 ## Description
 
-[Docker Compose](https://docs.docker.com/compose/) setup for starting [GitLab](https://gitlab.com/) with [Træfik](https://traefik.io/).
+[Docker Compose](https://docs.docker.com/compose/) setup for starting [GitLab](https://gitlab.com/)
+with [Træfik](https://traefik.io/).
 
 ## Setup
 
@@ -44,7 +46,8 @@ The GitLab SSH port for git. Default value: '22'
 
 ## Development
 
-[Solution Libre](https://www.solution-libre.fr)'s repositories are open projects, and community contributions are essential for keeping them great.
+[Solution Libre](https://www.solution-libre.fr)'s repositories are open projects,
+and community contributions are essential for keeping them great.
 
 [Fork this repo on GitHub](https://github.com/solution-libre/docker-gitlab/fork)
 
