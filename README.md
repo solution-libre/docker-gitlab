@@ -29,7 +29,7 @@ Declare environment variables or copy the `.env.dist` to `.env` and adjust its v
 
 ```sh
 cd /opt/gitlab
-docker-compose up -d
+docker compose up -d
 ```
 
 ## Reference
