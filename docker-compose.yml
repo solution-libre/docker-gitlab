@@ -19,13 +19,13 @@ services:
     # Traefik labels are suggested as an example for people using Traefik,
     # remove them if you are using another reverse proxy.
     labels:
-      traefik.backend: 'gitlab'
       traefik.enable: 'true'
-      traefik.docker.network: 'web'
-      traefik.frontend.rule: "Host:${GITLAB_HOSTNAME}"
+      traefik.http.routers.gitlab.entrypoints: websecure
+      traefik.http.routers.gitlab.rule: "Host(`${GITLAB_HOSTNAME}`)"
+      traefik.http.routers.gitlab.tls.certresolver: myresolver
       # If you want enable mattermost, comment the previous line and uncomment the next line
-      # traefik.frontend.rule: "Host:${GITLAB_HOSTNAME},mattermost.${GITLAB_HOSTNAME}"
-      traefik.port: '80'
+      # traefik.http.routers.gitlab.tls.certresolver:  "Host(`${GITLAB_HOSTNAME}`,`mattermost.${GITLAB_HOSTNAME}`)"
+      traefik.http.services.gitlab.loadbalancer.server.port: 80
     # If you don't want to use a reverse proxy (not suitable for production!)
     # ports:
     #  - "80:80"
