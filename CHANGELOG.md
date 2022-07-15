@@ -19,6 +19,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Upgrade to [Træfik](https://traefik.io/) [v2](https://doc.traefik.io/traefik/migration/v1-to-v2/) syntax.
 - Replace CI markdown check.
 - Use Docker Compose plugin.
+- Put the runner in its own network.
 
 ## [1.1.0] 2022-06-22
 
