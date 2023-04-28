@@ -1,0 +1,9 @@
+services:
+  web:
+    # Traefik labels are suggested as an example for people using Traefik,
+    # remove them if you are using another reverse proxy.
+    labels:
+      traefik.http.routers.gitlab-mattermost.entrypoints: websecure
+      traefik.http.routers.gitlab-mattermost.rule: "Host(`${MATTERMOST_SUBDOMAIN}.${DOMAIN}`)"
+      traefik.http.routers.gitlab-mattermost.service: gitlab-mattermost
+      traefik.http.routers.gitlab-mattermost.tls.certresolver: myresolver
