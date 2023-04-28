@@ -1,0 +1,10 @@
+services:
+  web:
+    # Traefik labels are suggested as an example for people using Traefik,
+    # remove them if you are using another reverse proxy.
+    labels:
+      traefik.http.routers.gitlab-registry.entrypoints: websecure
+      traefik.http.routers.gitlab-registry.rule: "Host(`${REGISTRY_SUBDOMAIN}.${DOMAIN}`)"
+      traefik.http.routers.gitlab-registry.service: gitlab-registry
+      traefik.http.routers.gitlab-registry.tls.certresolver: myresolver
+      traefik.http.services.gitlab-registry.loadbalancer.server.port: 5000
