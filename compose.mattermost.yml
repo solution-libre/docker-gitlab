@@ -24,3 +24,4 @@ services:
       traefik.http.routers.gitlab-mattermost.rule: "Host(`${MATTERMOST_SUBDOMAIN}.${DOMAIN}`)"
       traefik.http.routers.gitlab-mattermost.service: gitlab-mattermost
       traefik.http.routers.gitlab-mattermost.tls.certresolver: myresolver
+      traefik.http.services.gitlab-mattermost.loadbalancer.server.port: 8065
