@@ -13,13 +13,13 @@
 ## Description
 
 [Docker Compose](https://docs.docker.com/compose/) setup for starting [GitLab](https://gitlab.com/)
-with [Træfik](https://traefik.io/).
+with [Træfik](https://traefik.io/) by [Solution Libre].
 
 ## Setup
 
 ```sh
 cd /opt
-git clone https://github.com/solution-libre/docker-gitlab.git gitlab
+git clone https://usine.solution-libre.fr/docker/gitlab.git gitlab
 cd gitlab
 ```
 
@@ -46,11 +46,14 @@ The GitLab SSH port for git. Default value: '22'
 
 ## Development
 
-[Solution Libre](https://www.solution-libre.fr)'s repositories are open projects,
+[Solution Libre]'s repositories are open projects,
 and community contributions are essential for keeping them great.
 
-[Fork this repo on GitHub](https://github.com/solution-libre/docker-gitlab/fork)
+[Fork this repo on our GitLab](https://usine.solution-libre.fr/docker/gitlab/-/forks/new) or
+[on GitHub](https://github.com/solution-libre/docker-gitlab/fork)
 
 ## Contributors
 
-The list of contributors can be found at: <https://github.com/solution-libre/docker-gitlab/graphs/contributors>
+The list of contributors can be found at: <https://usine.solution-libre.fr/docker/gitlab/-/graphs/main>
+
+[Solution Libre]: https://www.solution-libre.fr
