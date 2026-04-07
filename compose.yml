@@ -77,6 +77,7 @@ services:
             'regionendpoint' => '${REGISTRY_STORAGE_REGION_ENDPOINT}',
             'secretkey'      => '${REGISTRY_STORAGE_SECRET_KEY}'
           }
+        }
     # Traefik labels are suggested as an example for people using Traefik,
     # remove them if you are using another reverse proxy.
     labels:
