@@ -34,15 +34,7 @@ docker compose up -d
 
 ## Reference
 
-### Environment variables
-
-#### `GITLAB_HOSTNAME`
-
-The GitLab hostname. Default value: 'my.domain.tld'
-
-#### `GITLAB_SSH_PORT`
-
-The GitLab SSH port for git. Default value: '22'
+See [REFERENCE.md](./REFERENCE.md).
 
 ## Development
 
