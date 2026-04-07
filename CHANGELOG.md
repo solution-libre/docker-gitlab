@@ -7,6 +7,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 <!-- markdownlint-configure-file { "MD024": { "siblings_only": true } } -->
 
+## [3.0.0] 2026-04-07
+
+### Added
+
+- Add separate compose files for Mattermost (`compose.mattermost.yaml`) and Registry (`compose.registry.yaml`).
+- Add object storage (S3) support for GitLab artifacts, LFS, uploads, packages, and more.
+- Add object storage support for Container Registry.
+- Add SMTP configuration for GitLab email notifications.
+
+### Changed
+
+- Migrate project to GitLab infrastructure.
+- Rename `docker-volumes` directory to `volumes`.
+- Improve Traefik labels organization across compose files.
+
 ## [2.0.0] 2022-07-15
 
 ### Added
@@ -66,6 +81,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Docker-compose setup for starting GitLab with Træfik.
 
+[3.0.0]: https://usine.solution-libre.fr/docker/gitlab/-/compare/v2.0.0...v3.0.0
 [2.0.0]: https://github.com/solution-libre/docker-bareos/compare/v1.1.0...v2.0.0
 [1.1.0]: https://github.com/solution-libre/docker-bareos/compare/v1.0.0...v1.1.0
 [1.0.0]: https://github.com/solution-libre/docker-bareos/compare/v0.3.0...v1.0.0
