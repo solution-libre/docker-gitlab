@@ -18,6 +18,6 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v6
     - name: Lint Markdown
-      uses: DavidAnson/markdownlint-cli2-action@v13
+      uses: DavidAnson/markdownlint-cli2-action@v23
       with:
         globs: '**/*.md'
