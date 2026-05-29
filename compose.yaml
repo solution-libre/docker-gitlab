@@ -78,23 +78,22 @@ services:
             'secretkey'      => '${REGISTRY_STORAGE_SECRET_KEY}'
           }
         }
-    # Traefik labels are suggested as an example for people using Traefik,
-    # remove them if you are using another reverse proxy.
     labels:
+      # Traefik labels are suggested as an example for people using Traefik,
+      # remove them if you are using another reverse proxy.
       traefik.enable: true
       traefik.http.routers.gitlab.entrypoints: websecure
       traefik.http.routers.gitlab.rule: "Host(`${GITLAB_SUBDOMAIN}.${DOMAIN}`)"
       traefik.http.routers.gitlab.service: gitlab
       traefik.http.routers.gitlab.tls.certresolver: myresolver
       traefik.http.services.gitlab.loadbalancer.server.port: 80
-    # If you don't want to use a reverse proxy (not suitable for production!)
-    # ports:
-    #  - "80:80"
     networks:
       default:
       proxy:
     ports:
       - ${GITLAB_SSH_PORT}:22
+      # If you don't want to use a reverse proxy (not suitable for production!)
+      # - "80:80"
     restart: unless-stopped
     volumes:
       - web_config:/etc/gitlab
