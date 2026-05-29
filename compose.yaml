@@ -37,14 +37,14 @@ services:
           'aws_secret_access_key' => '${OBJECT_STORAGE_SECRET_KEY}'
         }
         gitlab_rails['object_store']['objects']['artifacts']['bucket'] = '${OBJECT_STORAGE_BUCKET_PREFIX}artifacts'
+        gitlab_rails['object_store']['objects']['ci_secure_files']['bucket'] = '${OBJECT_STORAGE_BUCKET_PREFIX}ci-secure-files'
+        gitlab_rails['object_store']['objects']['dependency_proxy']['bucket'] = '${OBJECT_STORAGE_BUCKET_PREFIX}dependency-proxy'
         gitlab_rails['object_store']['objects']['external_diffs']['bucket'] = '${OBJECT_STORAGE_BUCKET_PREFIX}mr-diffs'
         gitlab_rails['object_store']['objects']['lfs']['bucket'] = '${OBJECT_STORAGE_BUCKET_PREFIX}lfs'
-        gitlab_rails['object_store']['objects']['uploads']['bucket'] = '${OBJECT_STORAGE_BUCKET_PREFIX}uploads'
         gitlab_rails['object_store']['objects']['packages']['bucket'] = '${OBJECT_STORAGE_BUCKET_PREFIX}packages'
-        gitlab_rails['object_store']['objects']['dependency_proxy']['bucket'] = '${OBJECT_STORAGE_BUCKET_PREFIX}dependency-proxy'
-        gitlab_rails['object_store']['objects']['terraform_state']['bucket'] = '${OBJECT_STORAGE_BUCKET_PREFIX}terraform-state'
-        gitlab_rails['object_store']['objects']['ci_secure_files']['bucket'] = '${OBJECT_STORAGE_BUCKET_PREFIX}ci-secure-files'
         gitlab_rails['object_store']['objects']['pages']['bucket'] = '${OBJECT_STORAGE_BUCKET_PREFIX}pages'
+        gitlab_rails['object_store']['objects']['terraform_state']['bucket'] = '${OBJECT_STORAGE_BUCKET_PREFIX}terraform-state'
+        gitlab_rails['object_store']['objects']['uploads']['bucket'] = '${OBJECT_STORAGE_BUCKET_PREFIX}uploads'
         gitlab_rails['object_store']['proxy_download'] = false
         gitlab_rails['smtp_enable'] = ${SMTP_ENABLE:-false}
         gitlab_rails['smtp_address'] = "${SMTP_ADDRESS}"
@@ -87,6 +87,11 @@ services:
       traefik.http.routers.gitlab.service: gitlab
       traefik.http.routers.gitlab.tls.certresolver: myresolver
       traefik.http.services.gitlab.loadbalancer.server.port: 80
+      # Ofelia labels for scheduled GitLab backup are suggested as an example for people using Ofelia,
+      # remove them if you don't use Ofelia or if you want to schedule backups differently.
+      ofelia.enabled: true
+      ofelia.job-exec.gitlab-backup.schedule: '0 0 * * *'
+      ofelia.job-exec.gitlab-backup.command: "gitlab-backup create BACKUP=dump ${OBJECT_STORAGE_ENABLE:+SKIP=repositories,uploads,builds,artifacts,pages,lfs,terraform_state,registry,packages,ci_secure_files,external_diffs}"
     networks:
       default:
       proxy:

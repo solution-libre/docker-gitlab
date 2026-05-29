@@ -13,7 +13,7 @@
 ## Description
 
 [Docker Compose](https://docs.docker.com/compose/) setup for starting [GitLab](https://gitlab.com/)
-with [Træfik](https://traefik.io/) by [Solution Libre].
+with [Traefik] by [Solution Libre].
 
 ## Setup
 
@@ -32,6 +32,29 @@ cd /opt/gitlab
 docker compose up -d
 ```
 
+## Optional Integrations
+
+This setup includes pre-configured labels for optional integrations with Traefik and Ofelia.
+You can use them, customize them, or remove them based on your needs.
+
+### Traefik (Reverse Proxy)
+
+The Docker Compose files include [Traefik] labels for automatic HTTPS routing and SSL certificate management.
+This is **optional** and recommended for production deployments.
+
+**To use Traefik:**
+
+The labels are already configured in the compose files for GitLab, Mattermost, and the Container Registry.
+See [Solution Libre's Traefik setup](https://usine.solution-libre.fr/docker/traefik)
+for a complete Traefik configuration compatible with this project.
+
+### Ofelia (Scheduled Backups)
+
+The `web` service includes Ofelia labels to automatically schedule GitLab backups every day at midnight.
+This is **optional** and requires [Ofelia](https://github.com/mcuadros/ofelia) running on your Docker host.
+
+**Current schedule:** Daily at 00:00 (midnight)
+
 ## Reference
 
 See [REFERENCE.md](./REFERENCE.md).
@@ -49,3 +72,4 @@ and community contributions are essential for keeping them great.
 The list of contributors can be found at: <https://usine.solution-libre.fr/docker/gitlab/-/graphs/main>
 
 [Solution Libre]: https://www.solution-libre.fr
+[Traefik]: https://traefik.io/traefik
