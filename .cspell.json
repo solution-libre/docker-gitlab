@@ -1,6 +1,18 @@
 {
     "words": [
+        "accesskey",
+        "certresolver",
         "github",
-        "gitlab"
+        "gitlab",
+        "loadbalancer",
+        "matomo",
+        "mattermost",
+        "myresolver",
+        "nginx",
+        "regionendpoint",
+        "secretkey",
+        "starttls",
+        "traefik",
+        "websecure"
     ]
 }
