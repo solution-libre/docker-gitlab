@@ -28,4 +28,4 @@ services:
       # Ofelia labels for scheduled Mattermost backup are suggested as an example for people using Ofelia,
       # remove them if you don't use Ofelia or if you want to schedule backups differently.
       ofelia.job-exec.gitlab-mattermost-backup.schedule: '0 0 * * *'
-      ofelia.job-exec.gitlab-mattermost-backup.command: 'su - gitlab-psql -c "/opt/gitlab/embedded/bin/pg_dump -h /var/opt/gitlab/postgresql --no-owner mattermost_production | gzip" > /var/opt/gitlab/backups/mattermost.sql.gz'
+      ofelia.job-exec.gitlab-mattermost-backup.command: "su - gitlab-psql -c '/opt/gitlab/embedded/bin/pg_dump -h /var/opt/gitlab/postgresql --no-owner mattermost_production | gzip' > /var/opt/gitlab/backups/mattermost.sql.gz"

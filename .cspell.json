@@ -9,6 +9,7 @@
         "mattermost",
         "myresolver",
         "nginx",
+        "ofelia",
         "regionendpoint",
         "secretkey",
         "starttls",
