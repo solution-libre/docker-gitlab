@@ -1,5 +1,23 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "customManagers": [
+    {
+      "customType": "regex",
+      "managerFilePatterns": ["/^\\.env\\.dist$/"],
+      "matchStrings": ["GITLAB_VERSION='(?<currentValue>[^']+)'"],
+      "datasourceTemplate": "docker",
+      "depNameTemplate": "gitlab/gitlab-ce",
+      "extractVersionTemplate": "^(?<version>\\d+\\.\\d+\\.\\d+)"
+    },
+    {
+      "customType": "regex",
+      "managerFilePatterns": ["/^\\.env\\.dist$/"],
+      "matchStrings": ["GITLAB_RUNNER_VERSION='(?<currentValue>[^']+)'"],
+      "datasourceTemplate": "docker",
+      "depNameTemplate": "gitlab/gitlab-runner",
+      "extractVersionTemplate": "^v(?<version>.*)$"
+    }
+  ],
   "extends": [
     "config:recommended"
   ]
