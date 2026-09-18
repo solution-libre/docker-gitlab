@@ -9,14 +9,14 @@ jobs:
       image: docker:latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
       - name: Check Docker Compose file syntax
         run: docker compose --env-file .env.dist config -q
   check-markdown-syntax:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v6
+      uses: actions/checkout@v7
     - name: Lint Markdown
       uses: DavidAnson/markdownlint-cli2-action@v23
       with:
