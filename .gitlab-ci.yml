@@ -16,7 +16,7 @@
 # along with GitLab with Docker Compose.  If not, see <https://www.gnu.org/licenses/>.
 
 include:
-  - component: $CI_SERVER_FQDN/gitlab/components/lint/markdown@0.5.0
+  - component: $CI_SERVER_FQDN/gitlab/components/lint/markdown@0.5.1
     inputs:
       stage: linting
   - component: usine.solution-libre.fr/gitlab/components/changelog/parse@0.1.4
